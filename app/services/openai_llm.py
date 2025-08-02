@@ -13,9 +13,9 @@ def get_llm():
         logger.error("OPENROUTER_API_KEY not found in environment variables.")
         raise ValueError("Missing OpenRouter API key")
 
-    logger.info("Initializing OpenRouter LLM: openai/o4-mini-high")
+    logger.info("Initializing OpenRouter LLM: deepseek/deepseek-r1-0528:free")
     return ChatOpenAI(
-        model="openai/o4-mini-high",                  # ✅ or any other OpenRouter-supported model
+        model="deepseek/deepseek-r1-0528:free",                  # ✅ or any other OpenRouter-supported model
         temperature=0,
         openai_api_key=api_key,
         base_url="https://openrouter.ai/api/v1",# ✅ critical for OpenRouter
