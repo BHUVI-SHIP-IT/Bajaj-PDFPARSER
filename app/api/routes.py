@@ -32,3 +32,6 @@ def run_query(
     
     answers = process_document_and_answer(request.documents, request.questions)
     return QueryResponse(answers=answers)
+@router.get("/run")
+def health_check():
+    return {"status": "ok"}
