@@ -15,11 +15,13 @@ def get_llm():
 
     logger.info("Initializing OpenRouter LLM: deepseek/deepseek-r1-0528:free")
     return ChatOpenAI(
-        model="deepseek/deepseek-r1-0528:free",                  # ✅ or any other OpenRouter-supported model
+        model="deepseek/deepseek-r1-0528:free",
         temperature=0,
-        openai_api_key=api_key,
-        base_url="https://openrouter.ai/api/v1",# ✅ critical for OpenRouter
+        base_url="https://openrouter.ai/api/v1",
         max_tokens=500,
+        default_headers={
+            "Authorization": f"Bearer {api_key}"
+        }
     )
 
 def get_qa_chain(llm, vectordb):

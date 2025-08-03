@@ -1,5 +1,4 @@
-from langchain.vectorstores import Chroma
-from langchain_community.embeddings import OpenAIEmbeddings
+from langchain_community.vectorstores import Chroma
 from app.utils.logger import get_logger
 import os
 
