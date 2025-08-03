@@ -12,7 +12,8 @@ EXPECTED_TOKEN = os.getenv("AUTH_TOKEN")
 router = APIRouter()
 logger = get_logger("router")
 
-@router.post("/api/v1/hackrx/run", response_model=QueryResponse)
+@router.post("/run")
+
 def run_query(
     request: QueryRequest,
     authorization: str = Header(None)

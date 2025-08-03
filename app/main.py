@@ -6,7 +6,8 @@ app = FastAPI(
     version="1.0.0"
 )
 
-app.include_router(router)
+app.include_router(router, prefix="/api/v1/hackrx")
+
 
 @app.get("/")
 def read_root():
